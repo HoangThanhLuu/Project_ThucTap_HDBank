@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="com.example.demoTTS2.Model.RoleEntity">
+        <table name="role" schema="demo_ql" catalog=""/>
+        <attributes>
+            <id name="uif">
+                <column name="uif" precision="-1"/>
+            </id>
+            <basic name="addRole">
+                <column name="add_role" nullable="false" precision="1"/>
+            </basic>
+            <basic name="deleteRole">
+                <column name="delete_role" nullable="false" precision="1"/>
+            </basic>
+            <basic name="editRole">
+                <column name="edit_role" nullable="false" precision="1"/>
+            </basic>
+            <basic name="queryCustomerRole">
+                <column name="queryCustomer_role" nullable="false" precision="1"/>
+            </basic>
+            <basic name="readSalaryRole">
+                <column name="ReadSalary_role" nullable="false" precision="1"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>
