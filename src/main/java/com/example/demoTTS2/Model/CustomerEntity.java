@@ -1,11 +1,15 @@
 package com.example.demoTTS2.Model;
 
-import lombok.Getter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import java.sql.Date;
 import java.util.Objects;
 
-@Getter
+@Entity
+@Table(name = "customer", schema = "demo_ql", catalog = "")
+
 public class CustomerEntity {
     private int cif;
     private Integer empNo;
@@ -16,37 +20,75 @@ public class CustomerEntity {
     private Date birthdayPlace;
     private String gender;
     private Integer salary;
+    @Id
+    private Long id;
+
+    public int getCif() {
+        return cif;
+    }
 
     public void setCif(int cif) {
         this.cif = cif;
+    }
+
+    public Integer getEmpNo() {
+        return empNo;
     }
 
     public void setEmpNo(Integer empNo) {
         this.empNo = empNo;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPermanentAddress() {
+        return permanentAddress;
     }
 
     public void setPermanentAddress(String permanentAddress) {
         this.permanentAddress = permanentAddress;
     }
 
+    public String getTemporaryAddress() {
+        return temporaryAddress;
+    }
+
     public void setTemporaryAddress(String temporaryAddress) {
         this.temporaryAddress = temporaryAddress;
+    }
+
+    public Integer getBirthday() {
+        return birthday;
     }
 
     public void setBirthday(Integer birthday) {
         this.birthday = birthday;
     }
 
+    public Date getBirthdayPlace() {
+        return birthdayPlace;
+    }
+
     public void setBirthdayPlace(Date birthdayPlace) {
         this.birthdayPlace = birthdayPlace;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public Integer getSalary() {
+        return salary;
     }
 
     public void setSalary(Integer salary) {

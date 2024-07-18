@@ -23,6 +23,9 @@
             <basic name="phone">
                 <column name="phone" nullable="false" precision="-1"/>
             </basic>
+            <basic name="role">
+                <column name="role" precision="-1"/>
+            </basic>
         </attributes>
     </entity>
 </entity-mappings>

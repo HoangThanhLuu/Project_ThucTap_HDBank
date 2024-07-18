@@ -1,10 +1,14 @@
 package com.example.demoTTS2.Model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 
 import java.util.Objects;
-
 @Getter
+@Entity
+@Table(name = "role", schema = "demo_ql", catalog = "")
 public class RoleEntity {
     private int uif;
     private Byte addRole;
@@ -12,6 +16,8 @@ public class RoleEntity {
     private Byte editRole;
     private Byte queryCustomerRole;
     private Byte readSalaryRole;
+    @Id
+    private Long id;
 
     public void setUif(int uif) {
         this.uif = uif;
@@ -49,4 +55,7 @@ public class RoleEntity {
     public int hashCode() {
         return Objects.hash(uif, addRole, deleteRole, editRole, queryCustomerRole, readSalaryRole);
     }
+
+
+
 }
