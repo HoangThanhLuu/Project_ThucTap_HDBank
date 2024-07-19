@@ -6,11 +6,10 @@ import jakarta.persistence.Table;
 
 import java.sql.Date;
 import java.util.Objects;
-
 @Entity
 @Table(name = "customer", schema = "demo_ql", catalog = "")
-
 public class CustomerEntity {
+    @Id
     private int cif;
     private Integer empNo;
     private String name;
@@ -20,8 +19,6 @@ public class CustomerEntity {
     private Date birthdayPlace;
     private String gender;
     private Integer salary;
-    @Id
-    private Long id;
 
     public int getCif() {
         return cif;

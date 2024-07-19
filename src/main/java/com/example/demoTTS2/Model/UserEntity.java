@@ -9,11 +9,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Objects;
 import java.util.List;
+import java.util.Objects;
 @Entity
 @Table(name = "user", schema = "demo_ql", catalog = "")
-
 public class UserEntity implements UserDetails {
     @Id
     private int uif;
@@ -62,8 +61,9 @@ public class UserEntity implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        List<SimpleGrantedAuthority> authorityList= new ArrayList<>();
-        authorityList.add(new SimpleGrantedAuthority("ROLE"+getRole()));
+        List<SimpleGrantedAuthority> authorityList = new ArrayList<>();
+        authorityList.add(new SimpleGrantedAuthority("ROLE_" +getRole()));
+        System.out.println(authorityList);
         return authorityList;
     }
 
@@ -119,6 +119,4 @@ public class UserEntity implements UserDetails {
     public int hashCode() {
         return Objects.hash(uif, username, password, name, address, phone, role);
     }
-
-
 }

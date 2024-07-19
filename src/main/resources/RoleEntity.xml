@@ -23,6 +23,9 @@
             <basic name="readSalaryRole">
                 <column name="ReadSalary_role" nullable="false" precision="1"/>
             </basic>
+            <basic name="username">
+                <column name="username" length="250"/>
+            </basic>
         </attributes>
     </entity>
 </entity-mappings>

@@ -8,7 +8,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -27,9 +26,10 @@ public AuthenticationManager authenticationManager(AuthenticationConfiguration c
 @Bean
 public UserDetailsService userDetailsService() {
     return username -> {
+
         UserEntity existingUser = userRepo.findByUsername(username);
         if(existingUser == null) {
-            return (UserDetails) new UsernameNotFoundException("Cannot find user with username" +username);
+            throw new UsernameNotFoundException("User not found with username: " + username);
         } else { return existingUser; }
     };
 }
