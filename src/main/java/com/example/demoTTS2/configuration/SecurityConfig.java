@@ -21,9 +21,9 @@ public class SecurityConfig {
         this.userRepo = userRepo;
     }
     @Bean
-@Primary
+    @Primary
 public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception{return configuration.getAuthenticationManager();};
-@Bean
+    @Bean
 public UserDetailsService userDetailsService() {
     return username -> {
 

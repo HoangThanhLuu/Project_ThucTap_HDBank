@@ -16,11 +16,10 @@ public class useradminController {
         this.roleRepo = roleRepo;
         this.iUserService = iUserService;
     }
-@PostMapping("setRole")
-    public ResponseEntity<?> setRole(@RequestHeader("Authorization") String authHeader,@RequestBody RoleEntity roleEntity){
-        try {  String extractedToken=authHeader.substring(7);
-            UserEntity optinalUser=iUserService.getUserfromJWT(extractedToken);
-            RoleEntity Role= roleRepo.findByUsername(optinalUser.getUsername());
+@PostMapping("setRole/{id}")
+    public ResponseEntity<?> setRole(@RequestHeader("Authorization") String authHeader, @RequestBody RoleEntity roleEntity, @PathVariable Integer id){
+        try {
+            RoleEntity Role= roleRepo.findByUif(id);
             Role.setAddRole(roleEntity.getAddRole());
             Role.setDeleteRole(roleEntity.getDeleteRole());
             Role.setQueryCustomerRole(roleEntity.getQueryCustomerRole());
