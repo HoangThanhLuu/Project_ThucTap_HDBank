@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="com.example.demoTTS2.Model.CustomerEntity">
+        <table name="customer" schema="demo_ql" catalog=""/>
+        <attributes>
+            <id name="cif">
+                <column name="cif" precision="-1"/>
+            </id>
+            <basic name="empNo">
+                <column name="empNo" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="name">
+                <column name="name" nullable="false" length="250"/>
+            </basic>
+            <basic name="permanentAddress">
+                <column name="permanent address" nullable="false" length="250"/>
+            </basic>
+            <basic name="temporaryAddress">
+                <column name="temporary address" nullable="false" length="250"/>
+            </basic>
+            <basic name="birthday">
+                <column name="birthday" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="birthdayPlace">
+                <column name="birthday place" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="gender">
+                <column name="gender" nullable="false" length="250"/>
+            </basic>
+            <basic name="salary">
+                <column name="salary" nullable="false" precision="-1"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>
