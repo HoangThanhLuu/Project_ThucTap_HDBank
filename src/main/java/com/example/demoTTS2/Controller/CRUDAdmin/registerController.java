@@ -30,9 +30,5 @@ public class registerController {
         iUserService.deleteUser(id);
         return ResponseEntity.ok("delete success");
     }
-    @PostMapping("/registerUser2")
-    public ResponseEntity<?> registerUser22(@RequestBody CustomerEntity userEntity){
-        customerService.registerCustomer(userEntity);
-        return ResponseEntity.ok("OK !");
-    }
+
 }

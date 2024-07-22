@@ -20,9 +20,11 @@ public class registerCustomerController {
         this.customerService = customerService;
     }
 
-//    @PostMapping("/registerUser2")
-//    public ResponseEntity<?> registerUser(@RequestBody CustomerEntity userEntity){
-//        customerService.registerCustomer(userEntity);
-//        return ResponseEntity.ok("OK !");
-//    }
+    @PostMapping("/add/customer")
+    public ResponseEntity<?> registerUser(@RequestBody CustomerEntity userEntity){
+     customerService.registerCustomer(userEntity);
+        return ResponseEntity.ok("post success");
+    }
+
+
 }

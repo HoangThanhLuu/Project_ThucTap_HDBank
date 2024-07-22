@@ -34,7 +34,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
         final List<Pair<String, String>> bypassToken = Arrays.asList(
                 Pair.of("/registerUser", "POST"),
                 Pair.of("/loginAdmin", "POST"),
-                Pair.of("/registerUser2", "POST")
+                Pair.of("/add/customer", "POST")
         );
 
         // Kiểm tra nếu request cần bypass

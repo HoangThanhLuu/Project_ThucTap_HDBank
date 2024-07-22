@@ -15,7 +15,7 @@ public class CustomerService implements  ICustomerService{
 
     @Override
     public CustomerEntity registerCustomer(CustomerEntity customerEntity) {
-        if(customer.existsByEmpNo(customerEntity.getEmpNo())){
+        if(customer.existsByEmpno(customerEntity.getEmpno())){
             throw new DataIntegrityViolationException("Customer already exists");
         }
         return  customer.save(customerEntity);
